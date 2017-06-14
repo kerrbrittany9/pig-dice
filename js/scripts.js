@@ -1,52 +1,37 @@
-function Rold(roll) {
-  this.rollOutcome = roll;
-  this.grandTotal = [];
-  this.turnTotal = [];
-  this.initialRoll = 3;
-console.log(roll);
+function Player() {
+  this.rollOutcome;
+  this.grandTotal;
+  this.turnTotal;
+  this.initialRoll;
 }
-Rold.prototype.add = function(initialRoll) {
-  this.turnTotal = this.rollOutcome + this.initialRoll
-  return this.turnTotal
-
-}
-// .prototype.addToGrandTotal = function() {
-//   this.grandTotal = this.turnTotal + this.grandTotal
-//   return this.grandTotal
-// }
 
 
-function getRandomIntInclusive(min, max) {
+
+
+  Player.protoype.ranNum = function(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  this.rollOutcome = Math.floor(Math.random() * (max - min + 1)) + min;
+
 }
-
-
-
 
 $(document).ready(function() {
   $("#player-one").click(function(event) {
     event.preventDefault;
 
-    var roll = getRandomIntInclusive(1, 6);
-
-    var turn = new Rold (roll);
+    var roll = ranNum(1, 6);
 
 
-    // var newTurnTotal = turn.addToTotal();
-    //var newGrandTotal = turn.addToGrandTotal();
-
-    $(".outcome1").text(turn.add());
+    $(".outcome1").text(roll);
   });
 
   $("#player-two").click(function(event) {
     event.preventDefault;
 
     var roll = getRandomIntInclusive(1, 6);
+    var turn = new Rold (roll);
 
-    $(".outcome2").text();
+    $(".outcome2").text(roll);
   });
-
 
 });

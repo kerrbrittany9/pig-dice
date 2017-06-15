@@ -31,8 +31,6 @@ Player.prototype.addToGrand = function() {
 
 }
 
-
-
 $(document).ready(function() {
 
   var player1 = new Player();

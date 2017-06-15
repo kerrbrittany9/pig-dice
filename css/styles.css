@@ -5,3 +5,7 @@
 .jumbotron ul {
   list-style: none;
 }
+
+.well {
+  text-align: center;
+}

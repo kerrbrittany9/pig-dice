@@ -6,7 +6,14 @@ function Player() {
 
 Player.prototype.ranNum = function() {
   this.roll = Math.ceil(Math.random() * (6));
-  return this.roll;
+  if (this.roll === 1) {
+    this.roll = 0;
+     this.subTotal = 0;
+    alert("You rolled a 1. Your turn is over.");
+  } else {
+    return this.roll;
+  }
+
 }
 
 Player.prototype.addToSub = function() {

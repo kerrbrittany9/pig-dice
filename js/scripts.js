@@ -2,7 +2,6 @@ function Player() {
   this.roll = 0;
   this.grandTotal = 0;
   this.subTotal = 0;
-
 }
 
 Player.prototype.ranNum = function() {
@@ -17,14 +16,20 @@ Player.prototype.addToSub = function() {
 
 Player.prototype.addToGrand = function() {
   this.grandTotal += this.subTotal;
-  return this.grandTotal;
+  if (this.grandTotal >= 100) {
+    alert("You Win!")
+  } else {
+    return this.grandTotal;
+  }
+
 }
+
+
 
 $(document).ready(function() {
 
   var player1 = new Player();
   var player2 = new Player();
-
 
   $(".player-one").click(function(event) {
     event.preventDefault;

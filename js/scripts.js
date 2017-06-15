@@ -1,37 +1,29 @@
 function Player() {
-  this.rollOutcome;
+  this.roll;
   this.grandTotal;
-  this.turnTotal;
-  this.initialRoll;
+  this.subTotal;
+
 }
 
-
-
-
-  Player.protoype.ranNum = function(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  this.rollOutcome = Math.floor(Math.random() * (max - min + 1)) + min;
-
+Player.prototype.ranNum = function() {
+  this.roll = Math.floor(Math.random() * (7));
+  return this.roll;
 }
 
 $(document).ready(function() {
-  $("#player-one").click(function(event) {
+  $(".player-one").click(function(event) {
     event.preventDefault;
 
-    var roll = ranNum(1, 6);
+    var player1 = new Player();
 
-
-    $(".outcome1").text(roll);
+    $(".outcome1").text(player1.ranNum());
   });
 
-  $("#player-two").click(function(event) {
+  $(".player-two").click(function(event) {
     event.preventDefault;
 
-    var roll = getRandomIntInclusive(1, 6);
-    var turn = new Rold (roll);
+    var player2 = new Player(roll, grandTotal, subTotal);
 
-    $(".outcome2").text(roll);
+    $(".outcome2").text();
   });
-
 });
